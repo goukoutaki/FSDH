@@ -26,7 +26,7 @@ method    = 'FSDH';
 feature   = 'kernel';
 n_anchors = 1000;
 % Kernel trans
-anchor = traindata(randsample(trainnum, n_anchors),:);
+anchor = traindata(randperm(trainnum, n_anchors),:);
 sigma  = 0.4; % for normalized data
 X      = exp(-sqdist(traindata,anchor)/(2*sigma*sigma));
 testX  = exp(-sqdist(testdata,anchor)/(2*sigma*sigma));
